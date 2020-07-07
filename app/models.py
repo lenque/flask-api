@@ -1,7 +1,6 @@
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 import datetime
-import json
 
 
 class User(db.Model):
@@ -33,16 +32,6 @@ class User(db.Model):
         
     def __repr__(self):
         return f'User {self.username}'
-
-    def serialize(self):
-        return {
-            'id': self.id,
-            'username': self.username,
-            'email': self.email,
-            'password_hash': self.password_hash,
-            'description': self.description,
-            'active': self.active
-        }
 
 
 class Dog(db.Model):

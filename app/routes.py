@@ -1,14 +1,13 @@
 from app import api
 from .auth import SignupApi, LoginApi
-from .views import DogsApi, DogsListApi, StartApi
+from .views import DogsApi, DogsListApi, StartApi, UserDogsApi
 
 api.add_resource(StartApi, '/')
 api.add_resource(SignupApi, '/api/auth/signup')
 api.add_resource(LoginApi, '/api/auth/login')
 api.add_resource(DogsApi, '/api/dogs')
-
 api.add_resource(DogsListApi, '/api/dogslist')
-
+api.add_resource(UserDogsApi, '/api/userdogs/<int:user_id>')
 
 # from app import app
 # from flask import Blueprint, jsonify
